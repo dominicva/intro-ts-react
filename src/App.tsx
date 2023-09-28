@@ -1,26 +1,7 @@
 import './App.css'
 import countries from './countries.json'
 
-type CountryProps = {
-  name: string
-  continents: string[]
-  population: number
-  capital: string
-  landlocked?: boolean
-  flags: {
-    png: string
-    svg: string
-    alt: string
-  }
-}
-
-function CountryCard({
-  name,
-  continents,
-  population,
-  capital,
-  flags,
-}: CountryProps) {
+function CountryCard({ name, continents, population, capital, flags }) {
   return (
     <article className="country">
       <div>
@@ -48,7 +29,7 @@ function CountryCard({
   )
 }
 
-function CountriesList({ countries }: { countries: CountryProps[] }) {
+function CountriesList({ countries }) {
   return (
     <ul className="countries">
       {countries.map((country) => (
@@ -61,7 +42,7 @@ function CountriesList({ countries }: { countries: CountryProps[] }) {
 }
 
 function App() {
-  const countriesData = countries as CountryProps[]
+  const countriesData = countries
 
   return (
     <main>
