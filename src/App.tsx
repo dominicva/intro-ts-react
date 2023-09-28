@@ -40,12 +40,10 @@ function CountriesList({ countries }) {
 }
 
 function App() {
-  const countriesData = countries
-
   return (
     <main>
       <h1 className="main__heading">Countries Of the World</h1>
-      <CountriesList countries={countriesData} />
+      <CountriesList countries={countries} />
     </main>
   )
 }
