@@ -84,6 +84,11 @@
     "continents": ["Africa"]
   },
   {
+    "flags": {
+      "png": "https://flagcdn.com/w320/mv.png",
+      "svg": "https://flagcdn.com/mv.svg",
+      "alt": "The flag of Maldives has a red field, at the center of which is a large green rectangle bearing a fly-side facing white crescent."
+    },
     "name": "Maldives",
     "capital": "Malé",
     "landlocked": false,

@@ -4,38 +4,59 @@
   padding: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main__heading {
+  margin-bottom: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.countries {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.country {
+  background-color: rgb(243 244 246);
+  color: #242424;
+  border-radius: 0.5rem;
+  max-width: 18rem;
+  height: 22rem;
 }
 
-.card {
-  padding: 2em;
+.country__flag {
+  border-radius: 0.5rem 0.5rem 0 0;
+  height: 12rem;
+  object-fit: cover;
+}
+.country__text-content {
+  padding: 0 1rem 0.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.country__name {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.country__continent {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.country__info {
+  display: flex;
+  gap: 3rem;
+}
+
+.country__info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.country__label {
+  font-size: 0.8rem;
+}
+
+.country__value {
+  font-weight: bold;
 }

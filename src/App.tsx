@@ -7,7 +7,7 @@ type CountryProps = {
   population: number
   capital: string
   landlocked?: boolean
-  flags?: {
+  flags: {
     png: string
     svg: string
     alt: string
@@ -22,21 +22,27 @@ function CountryCard({
   flags,
 }: CountryProps) {
   return (
-    <article>
+    <article className="country">
       <div>
-        <img src={flags?.svg} alt={flags?.alt} />
-        <hgroup>
-          <h2>{name}</h2>
-          <h3>{continents[0]}</h3>
-        </hgroup>
-        <p>
-          <span>capital</span>
-          <span>{capital}</span>
-        </p>
-        <p>
-          <span>population</span>
-          <span>{population}</span>
-        </p>
+        <img src={flags.svg} alt={flags.alt} className="country__flag" />
+        <div className="country__text-content">
+          <hgroup>
+            <h2 className="country__name">{name}</h2>
+            <h3 className="country__continent">{continents[0]}</h3>
+          </hgroup>
+          <div className="country__info">
+            <p className="country__info-container">
+              <span className="country__label">Capital city</span>
+              <span className="country__value">{capital}</span>
+            </p>
+            <p className="country__info-container">
+              <span className="country__label">Population</span>
+              <span className="country__value">
+                {population.toLocaleString()}
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </article>
   )
@@ -44,7 +50,7 @@ function CountryCard({
 
 function CountriesList({ countries }: { countries: CountryProps[] }) {
   return (
-    <ul>
+    <ul className="countries">
       {countries.map((country) => (
         <li key={country.name}>
           <CountryCard {...country} />
@@ -55,9 +61,12 @@ function CountriesList({ countries }: { countries: CountryProps[] }) {
 }
 
 function App() {
+  const countriesData = countries as CountryProps[]
+
   return (
     <main>
-      <CountriesList countries={countries} />
+      <h1 className="main__heading">Countries Of the World</h1>
+      <CountriesList countries={countriesData} />
     </main>
   )
 }
