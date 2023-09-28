@@ -6,7 +6,7 @@ type CountryProps = {
   continents: string[]
   population: number
   capital: string
-  landlocked?: boolean
+  landlocked: boolean
   flags: {
     png: string
     svg: string
