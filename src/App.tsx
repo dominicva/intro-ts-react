@@ -4,7 +4,7 @@ import countries from './countries.json'
 type CountryProps = {
   name: string
   continents: string[]
-  population: number
+  population?: number
   capital: string
   landlocked: boolean
   flags: {
@@ -34,12 +34,14 @@ function CountryCard({
             <span className="country__label">Capital city</span>
             <span className="country__value">{capital}</span>
           </p>
-          <p className="country__info-container">
-            <span className="country__label">Population</span>
-            <span className="country__value">
-              {population.toLocaleString()}
-            </span>
-          </p>
+          {population ? (
+            <p className="country__info-container">
+              <span className="country__label">Population</span>
+              <span className="country__value">
+                {population?.toLocaleString()}
+              </span>
+            </p>
+          ) : null}
         </div>
       </div>
     </article>
