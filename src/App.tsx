@@ -1,18 +1,18 @@
-import './App.css'
-import countries from './countries.json'
+import './App.css';
+import countries from './countries.json';
 
 type CountryProps = {
-  name: string
-  continents: string[]
-  population?: number
-  capital: string
-  landlocked: boolean
+  name: string;
+  continents: string[];
+  population?: number;
+  capital: string;
+  landlocked: boolean;
   flags: {
-    png: string
-    svg: string
-    alt: string
-  }
-}
+    png: string;
+    svg: string;
+    alt: string;
+  };
+};
 
 function CountryCard({
   name,
@@ -38,14 +38,14 @@ function CountryCard({
             <p className="country__info-container">
               <span className="country__label">Population</span>
               <span className="country__value">
-                {population?.toLocaleString()}
+                {population.toLocaleString()}
               </span>
             </p>
           ) : null}
         </div>
       </div>
     </article>
-  )
+  );
 }
 
 function CountriesList({ countries }: { countries: CountryProps[] }) {
@@ -57,18 +57,18 @@ function CountriesList({ countries }: { countries: CountryProps[] }) {
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
 function App() {
-  const countriesData = countries as CountryProps[]
+  const countriesData = countries as CountryProps[];
 
   return (
     <main>
       <h1 className="main__heading">Countries Of the World</h1>
       <CountriesList countries={countriesData} />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
